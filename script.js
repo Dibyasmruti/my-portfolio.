@@ -128,6 +128,19 @@ document.addEventListener('DOMContentLoaded', function () {
         alert("Failed to send email. " + JSON.stringify(err));
       });
   });
+ // send mail
+
+  function sendmail(){
+    let p ={
+      name :document.getElementById("name").value ,
+      email : document.getElementById("email").value ,
+      subject:document.getElementById("sub").value ,
+      message:document.getElementById("msg").value 
+
+    }
+    emailjs.send("service_msi4k6a", "template_h501awk",p).then(alert("Hy,Your Email Has Been Send . Thanku !"))
+  }
+
 
 
 

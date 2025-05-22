@@ -715,19 +715,26 @@ h3.my-profession
     color: var(--skin-color);
     text-align: center;
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+   
 
+}
+#jj{
+    margin-top: 30px;
 }
 .contact-sub-title
 {
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    
 }
 .contact .contact-info-item
 {
-    flex: 0 0 25%;
+    flex: 0 0 30%;
     max-width: 25%;
     text-align: center;
     
@@ -743,18 +750,20 @@ h3.my-profession
 .contact .contact-info-item .icon .fa{
     font-size: 25px;
     color: var(--skin-color);
+     padding-bottom: 5px;
 }
 .contact .contact-info-item .icon .fab{
     font-size: 25px;
     color: var(--skin-color);
-    padding-bottom: 50px;
+    padding-bottom: 5px;
 }
 .contact .contact-info-item h4{
     font-size: 18px;
     font-weight: 700;
     color: var(--text-black-900);
     text-transform: capitalize;
-    margin: 15px 0 5px ;
+    margin: 15px 0 15px ;
+    
 }
 .contact.contact-info-item p
 {
@@ -763,6 +772,7 @@ h3.my-profession
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
+    
 
 }
 .contact .contact-form{
@@ -840,7 +850,7 @@ h3.my-profession
 
     .portfolio .portfolio-item,
     .contact .contact-item,
-    .service .service-item
+    .service .service-item,.contact-info-item
     {
         flex: 0 0 50%;
         max-width: 50%;
@@ -870,6 +880,25 @@ h3.my-profession
         max-width: 100%;
     }
 }
+
+/* mobile view */
+@media (max-width: 767px) {
+  .contact .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns, equal width */
+    gap: 15pxpx; /* space between items, adjust as needed */
+  }
+
+  .contact .contact-info-item {
+    flex: 0 0 100%; /* remove flex basis from previous styles */
+    padding-bottom: 10px;
+    max-width: 100%; /* override previous max-width 100% */
+    
+  }
+}
+
+
+
 /* my work */
 /* Base style */
 .timeline-item {
@@ -958,3 +987,7 @@ h3.my-profession
     box-shadow: 0 12px 40px rgba(64, 41, 107, 0.758), 
                 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+
+
+

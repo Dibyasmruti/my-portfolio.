@@ -747,6 +747,7 @@ h3.my-profession
 .contact .contact-info-item .icon .fab{
     font-size: 25px;
     color: var(--skin-color);
+    padding-bottom: 50px;
 }
 .contact .contact-info-item h4{
     font-size: 18px;
@@ -758,6 +759,7 @@ h3.my-profession
 .contact.contact-info-item p
 {
     font-size: 16px;
+    
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
@@ -956,5 +958,3 @@ h3.my-profession
     box-shadow: 0 12px 40px rgba(64, 41, 107, 0.758), 
                 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
-

@@ -118,28 +118,41 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+ 
 
-    emailjs.sendForm("service_9tw97tw", "template_h501awk", this)
-      .then(() => {
-        alert("Message sent successfully!");
-      }, (err) => {
-        alert("Failed to send email. " + JSON.stringify(err));
-      });
-  });
- // send mail
 
-  function sendmail(){
-    let p ={
-      name :document.getElementById("name").value ,
-      email : document.getElementById("email").value ,
-      subject:document.getElementById("sub").value ,
-      message:document.getElementById("msg").value 
+  // send mail
+function sendmail() {
+  let p = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("sub").value,
+    message: document.getElementById("msg").value
+  };
 
-    }
-    emailjs.send("service_msi4k6a", "template_h501awk",p).then(alert("Hy,Your Email Has Been Send . Thanku !"))
+  // Simple email validation regex
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(p.email)) {
+    alert("Please enter a valid email address.");
+    return; // Stop sending email if invalid
   }
+
+  emailjs.send("service_msi4k6a", "template_h501awk", p)
+    .then(function(response) {
+      alert("Hi, your email has been sent. Thank you!");
+
+      // Clear all fields
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("sub").value = "";
+      document.getElementById("msg").value = "";
+    })
+    .catch(function(error) {
+      alert("Failed to send email. Please try again.");
+      console.error(error);
+    });
+}
+
 
 
 

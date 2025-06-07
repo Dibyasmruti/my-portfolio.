@@ -122,38 +122,97 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // send mail
+// function sendmail() {
+//   let p = {
+//     name: document.getElementById("name").value,
+//     email: document.getElementById("email").value,
+//     subject: document.getElementById("sub").value,
+//     message: document.getElementById("msg").value,
+//     phone:document.getElementById("num").value,
+//     gender:document.getElementById("g").value
+//   };
+
+//   // Simple email validation regex
+//   let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   if (!emailPattern.test(p.email)) {
+//     alert("Please enter a valid email address.");
+//     return; // Stop sending email if invalid
+//   }
+
+//   emailjs.send("service_msi4k6a", "template_h501awk", p)
+//     .then(function(response) {
+//       alert("Hi, your email has been sent. Thank you!");
+
+//       // Clear all fields
+//       document.getElementById("name").value = "";
+//       document.getElementById("email").value = "";
+//       document.getElementById("sub").value = "";
+//       document.getElementById("msg").value = "";
+//       document.getElementById("num").value = "";
+//       document.getElementById("g").value = "";
+//     })
+//     .catch(function(error) {
+//       alert("Failed to send email. Please try again.");
+//       console.error(error);
+//     });
+// }
+
+
+
+
 function sendmail() {
+  // Show loader
+  document.getElementById("loader").style.display = "block";
+
   let p = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     subject: document.getElementById("sub").value,
-    message: document.getElementById("msg").value
+    message: document.getElementById("msg").value,
+    phone: document.getElementById("num").value,
+    gender: document.getElementById("g").value
   };
 
-  // Simple email validation regex
+  // Email validation
   let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(p.email)) {
     alert("Please enter a valid email address.");
-    return; // Stop sending email if invalid
+    document.getElementById("loader").style.display = "none";
+    return;
   }
 
+  // Phone number validation (10 digits)
+  let phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(p.phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    document.getElementById("loader").style.display = "none";
+    return;
+  }
+
+  // Check required fields
+  if (!p.name || !p.subject || !p.message || !p.gender) {
+    alert("Please fill in all the required fields.");
+    document.getElementById("loader").style.display = "none";
+    return;
+  }
+
+  // Send email using EmailJS
   emailjs.send("service_msi4k6a", "template_h501awk", p)
     .then(function(response) {
       alert("Hi, your email has been sent. Thank you!");
-
-      // Clear all fields
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
       document.getElementById("sub").value = "";
       document.getElementById("msg").value = "";
+      document.getElementById("num").value = "";
+      document.getElementById("g").value = "";
     })
     .catch(function(error) {
       alert("Failed to send email. Please try again.");
       console.error(error);
+    })
+    .finally(function() {
+      // Hide loader after send completes
+      document.getElementById("loader").style.display = "none";
     });
 }
-
-
-
-
-

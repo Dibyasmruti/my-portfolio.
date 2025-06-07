@@ -51,7 +51,11 @@
     <!-- Aside  start -->
      <div class="aside">
         <div class="logo">
-            <a href="#"><span>A</span>tlas</a>
+            <!-- <a href="#">D<span  style="color: var( --dsr2-color)" >S</span>R</a> -->
+             <div class="dsr">
+                <img src="immage/dsr-logo.png" alt="DSR" style="width: 100px  ; height: auto; border-radius: 50%;">
+             </div>
+
         </div>
         <div class="nav-toggler">
             <span></span>
@@ -121,7 +125,7 @@
                                         <p>Age : <span>23</span></p>
                                     </div>
                                     <div class="info-item padd-15">
-                                        <p>E-mail : <span>dibyasmrutiroutray01@gmail.com</span></p>
+                                        <p>E-mail : <span>dibyasmruti001@gmail.com</span></p>
                                     </div>
                                     <div class="info-item padd-15">
                                         <p>degree : <span>MCA</span></p>
@@ -353,7 +357,7 @@
                         <div class="row">
                             <!-- contact info item start -->
                              <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-phone"></i></div>
+                                <div class="icon"><i class="fa fa-phone" id="ff"></i></div>
                                 <h4>call me on</h4>
                                 <p>+91 9861904969</p>
                              </div>
@@ -361,7 +365,7 @@
                              <!-- contact info item end -->
                               <!-- contact info item start -->
                              <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-building"></i></div>
+                                <div class="icon"><i class="fa fa-building" id="ff"></i></div>
                                 <h4>I'm At</h4>
                                 <p>Jagatsinghpur</p>
                              </div>
@@ -369,7 +373,7 @@
                              <!-- contact info item end -->
                               <!-- contact info item start -->
                              <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-envelope"></i></div>
+                                <div class="icon"><i class="fa fa-envelope" id="ff"></i></div>
                                 <h4>E-mail on </h4>
                                 <p>dibyasmruti001@gmail.com</p>
                              </div>
@@ -377,14 +381,15 @@
                              <!-- contact info item end -->
                               <!-- contact info item start -->
                              <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fab fa-linkedin"></i></div>
+                                <div class="icon"><i class="fab fa-linkedin"  id="linkedin"></i></div>
+                                
                                 <h4>Linkedin </h4>
                                 <p>Dibyasmruti Routray</p>
                              </div>
 
                              <!-- contact info item end -->
                         </div>
-                       <h3 class="contact-title padd-15">Send me an email ?</h3>
+                       <h3 class="contact-title padd-15" id="jj">Send me an E-mail ?</h3>
 <h4 class="contact-sub-title padd-15">I'm very responsive to messages.</h4>
 
 <!-- contact form start -->
@@ -401,6 +406,22 @@
                     <input type="email" class="form-control" placeholder="email" id="email" required>
                 </div>
             </div>
+            <div class="form-item col-6 padd-15">
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="number" id="num" required>
+                </div>
+            </div>
+            <div class="form-item col-6 padd-15">
+        <div class="form-group">
+            <select class="form-control" id="g" required>
+            <option value="" disabled selected class="form-control">Select Gender</option>
+            <option value="male">Male </option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            </select>
+        </div>
+        </div>
+
 
             
 
@@ -419,6 +440,21 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <!-- loder -->
+       <div id="loader" style="display: none; text-align: center;">
+  <div class="spinner"></div>
+  <p style="color:var(--skin-color); font-weight: bold;">Sending message, please wait...</p>
+</div>
+
+
+
+
+
+
         <div class="row">
             <div class="form-item col-12 padd-15">
                 <button type="submit" class="btn" onclick="sendmail()">Send</button>

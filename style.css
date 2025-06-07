@@ -191,6 +191,22 @@ ul
     font-size: 30px;
     text-transform: capitalize;
 }
+
+.dsr img {
+  width: 160px; /* adjust size as you want */
+  height: auto;
+  box-shadow: none; /* no shadow by default */
+  transition: box-shadow 0.3s ease;
+}
+
+.dsr img:hover {
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(0, 123, 255, 0.9); /* glowing blue */
+  cursor: pointer;
+}
+
+
 .aside .logo a
 {
     /* color: var(--bg-black-900); */
@@ -988,6 +1004,30 @@ h3.my-profession
                 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+
+
+
+
+
+
+/* Loader Spinner */
+.spinner {
+  border: 6px solid #f3f3f3;              /* Light grey */
+  border-top: 8px solid var(--skin-color);          /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: none;
+  margin: 20px auto;                      /* Center horizontally */
+}
+
+/* Animation for spin */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 
